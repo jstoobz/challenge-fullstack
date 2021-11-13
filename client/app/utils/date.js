@@ -3,6 +3,6 @@
  * @param {*} d
  */
 export const convertUTCDateToLocalDate = (d) => {
-  const date = new Date(d);
-  return new Date(date.getTime() - date.getTimezoneOffset() * 60 * 1000);
-};
+  const date = new Date(d)
+  return new Date(date.getTime() - date.getTimezoneOffset() * 60 * 1000)
+}

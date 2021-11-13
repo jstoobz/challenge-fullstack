@@ -5,9 +5,9 @@ export default class IndexRoute extends Route {
   @service
   apolloService
 
-  beforeModel () {}
+  beforeModel() {}
 
-  async model (params) {
+  async model(params) {
     const model = await this.apolloService.fetchAllEvents()
     return model
   }

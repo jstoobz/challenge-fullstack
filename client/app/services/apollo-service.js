@@ -13,15 +13,15 @@ export default class ApolloService extends Service {
    * Build an error status with proper message.
    * @param {*} e
    */
-  returnErrorStatus (e) {
-    const message = e.errors.map(item => item.message).join(',')
+  returnErrorStatus(e) {
+    const message = e.errors.map((item) => item.message).join(',')
     return { status: 'error', message }
   }
 
   /**
    * Fetch all data with our main query
    */
-  async fetchAllEvents () {
+  async fetchAllEvents() {
     return await this.apollo.query({ query }, 'events')
   }
 }
