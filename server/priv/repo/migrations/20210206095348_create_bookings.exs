@@ -1,4 +1,4 @@
-defmodule Calevents.Repo.Migrations.CreateBookings do
+defmodule Peek.Repo.Migrations.CreateBookings do
   use Ecto.Migration
 
   def change do

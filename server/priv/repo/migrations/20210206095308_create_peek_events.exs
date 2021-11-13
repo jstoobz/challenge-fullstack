@@ -1,4 +1,4 @@
-defmodule Calevents.Repo.Migrations.CreatePeekEvents do
+defmodule Peek.Repo.Migrations.CreatePeekEvents do
   use Ecto.Migration
 
   def change do

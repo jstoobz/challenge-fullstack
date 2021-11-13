@@ -15,9 +15,11 @@ defmodule Peek.Bookings.Booking do
 
   @doc false
   def changeset(booking, attrs) do
+    required_files = [:first_name, :last_name, :event_id]
+
     booking
-    |> cast(attrs, [:first_name, :last_name, :event_id])
+    |> cast(attrs, required_files)
     |> foreign_key_constraint(:event_id, name: :bookings_event_id_fkey)
-    |> validate_required([:first_name, :last_name, :event_id])
+    |> validate_required(required_files)
   end
 end

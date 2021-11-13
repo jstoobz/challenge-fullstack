@@ -6,17 +6,19 @@ defmodule Peek.Events.Event do
   import Ecto.Changeset
 
   schema "peek_events" do
-    field(:duration, :integer)
-    field(:start, :naive_datetime)
-    field(:title, :string)
+    field :title, :string
+    field :start, :naive_datetime
+    field :duration, :integer
 
     timestamps()
   end
 
   @doc false
   def changeset(event, attrs) do
+    required_files = [:title, :start, :duration]
+
     event
-    |> cast(attrs, [:title, :start, :duration])
-    |> validate_required([:title, :start, :duration])
+    |> cast(attrs, required_files)
+    |> validate_required(required_files)
   end
 end
