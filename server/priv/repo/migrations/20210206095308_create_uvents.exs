@@ -3,9 +3,9 @@ defmodule Calevents.Repo.Migrations.CreatePeekEvents do
 
   def change do
     create table(:peek_events) do
-      add(:title, :string)
-      add(:start, :naive_datetime)
-      add(:duration, :integer)
+      add :title, :string
+      add :start, :naive_datetime
+      add :duration, :integer
 
       timestamps()
     end
