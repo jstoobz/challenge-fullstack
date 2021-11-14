@@ -5,6 +5,8 @@ defmodule Peek.Bookings.Booking do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @required_fields ~w(first_name last_name event_id)a
+
   schema "bookings" do
     field :first_name, :string
     field :last_name, :string
@@ -15,11 +17,9 @@ defmodule Peek.Bookings.Booking do
 
   @doc false
   def changeset(booking, attrs) do
-    required_files = [:first_name, :last_name, :event_id]
-
     booking
-    |> cast(attrs, required_files)
+    |> cast(attrs, @required_fields)
     |> foreign_key_constraint(:event_id, name: :bookings_event_id_fkey)
-    |> validate_required(required_files)
+    |> validate_required(@required_fields)
   end
 end

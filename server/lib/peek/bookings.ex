@@ -7,6 +7,10 @@ defmodule Peek.Bookings do
   alias Peek.Bookings.Booking
   alias Peek.Events
 
+  def list_bookings do
+    Repo.all(Booking)
+  end
+
   def get_bookings(event_id) do
     query =
       Booking
