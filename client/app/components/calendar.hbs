@@ -1,0 +1,68 @@
+<div class='calendar-header'>
+  <div class='important'>** Enter |> Your |> Name **</div>
+  <div class='user-name-form'>
+    <Input id='firstName' placeholder='First Name' @value={{this.firstName}} />
+    <Input id='lastName' placeholder='Last Name' @value={{this.lastName}} />
+  </div>
+</div>
+<div class='content'>
+  <div class='sidebar'>
+    <div class='hours'>
+      <div class='time-slot'>GMT-05</div>
+      <div class='time-slot'>12 AM</div>
+      <div class='time-slot'>1 AM</div>
+      <div class='time-slot'>2 AM</div>
+      <div class='time-slot'>3 AM</div>
+      <div class='time-slot'>4 AM</div>
+      <div class='time-slot'>5 AM</div>
+      <div class='time-slot'>6 AM</div>
+      <div class='time-slot'>7 AM</div>
+      <div class='time-slot'>8 AM</div>
+      <div class='time-slot'>9 AM</div>
+      <div class='time-slot'>10 AM</div>
+      <div class='time-slot'>11 AM</div>
+      <div class='time-slot'>12 PM</div>
+      <div class='time-slot'>1 PM</div>
+      <div class='time-slot'>2 PM</div>
+      <div class='time-slot'>3 PM</div>
+      <div class='time-slot'>4 PM</div>
+      <div class='time-slot'>5 PM</div>
+      <div class='time-slot'>6 PM</div>
+      <div class='time-slot'>7 PM</div>
+      <div class='time-slot'>8 PM</div>
+      <div class='time-slot'>9 PM</div>
+      <div class='time-slot'>10 PM</div>
+      <div class='time-slot'>11 PM</div>
+    </div>
+  </div>
+  <div class='calendar'>
+    {{#each-in @events as |date events|}}
+      <div class='day'>
+        <h3>{{date}}</h3>
+        {{#each events as |event|}}
+          <div class='event'>
+            <div class='event-inner'>
+              <div class='title'>{{event.title}}</div>
+              <div class='start-time'>
+                Start Time:
+                {{event.start}}
+              </div>
+              <div class='duration'>
+                Duration:
+                {{event.duration}}
+                minutes
+              </div>
+            </div>
+            <button
+              type='button'
+              class='button'
+              {{action 'createBooking' event.id on='click'}}
+            >
+              Book Today!
+            </button>
+          </div>
+        {{/each}}
+      </div>
+    {{/each-in}}
+  </div>
+</div>

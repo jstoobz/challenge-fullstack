@@ -1,0 +1,221 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic);
+@import 'ember-modal-dialog/ember-modal-structure.css';
+@import 'ember-modal-dialog/ember-modal-appearance.css';
+
+/**
+ * Base Elements
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+span,
+a,
+button {
+  font-family: 'Lato', 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica,
+    Arial, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  background: #fff;
+}
+
+a {
+  color: #016aba;
+  text-decoration: none;
+}
+
+button {
+  font-size: 100%;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/**
+ * Button
+ */
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #016aba;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.button:hover {
+  opacity: 1;
+}
+
+.not-found {
+  margin: 50px 0;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/**
+ * Top Navigation
+ */
+
+.navbar {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 50px;
+  z-index: 100;
+  background-color: #fff;
+  border-top: 4px solid #fff200;
+
+  .logo {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    a {
+      display: block;
+      height: 100%;
+      max-height: 50px !important;
+      margin: 0 !important;
+      background-color: #fff;
+
+      h1 {
+        height: 100%;
+        margin: 0 25px;
+        color: #000000;
+        font-size: 1.8em;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.jumbo {
+  display: block;
+  padding: 30px 15px 50px 15px;
+  text-align: center;
+}
+
+.container {
+  .ember-view {
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f6f6;
+
+    .calendar-header {
+      .important {
+        display: block;
+        margin: 50px 0 15px;
+        font-family: Lato;
+        font-size: 40px;
+        font-style: italic;
+        text-align: center;
+        color: red;
+      }
+      .user-name-form {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+
+        input {
+          margin: 10px;
+          height: 15px;
+          padding: 5px 10px;
+        }
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: row;
+
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        min-width: 300px;
+
+        .hours {
+          margin: 25px 5px 50px;
+          .time-slot {
+            padding-left: 15px;
+            padding-bottom: 15px;
+          }
+        }
+      }
+
+      .calendar {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        flex: 1 0 auto;
+
+        h3 {
+          font-size: 24px;
+          margin-bottom: 15px;
+          text-align: center;
+        }
+
+        .day {
+          display: flex;
+          flex-direction: column;
+          margin: 25px 5px 50px;
+
+          .event {
+            display: flex;
+            flex-direction: column;
+            width: auto;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            border: 1px solid #000;
+
+            .event-inner {
+              display: flex;
+              flex-direction: row;
+              padding: 5px 0;
+              justify-content: space-around;
+              font-size: 20px;
+            }
+
+            a {
+              display: inline-block;
+              padding: 5px 10px;
+              background: #016aba;
+              border-radius: 5px;
+              color: #fff;
+              font-size: 14px;
+              font-weight: bold;
+            }
+
+            .title,
+            .start-time,
+            .duration {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
